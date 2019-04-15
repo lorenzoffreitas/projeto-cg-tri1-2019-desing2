@@ -1645,7 +1645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.399994, y: -36.6}
+  m_AnchoredPosition: {x: 114.3999, y: -36.599976}
   m_SizeDelta: {x: 211, y: 73.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232155228
@@ -4382,8 +4382,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 687733887}
-  - component: {fileID: 687733886}
   - component: {fileID: 687733888}
+  - component: {fileID: 687733886}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4400,10 +4400,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 687733885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed755c3b01369d04f8f63ad5fe08bac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d01cc43744291d4798cfaab0a538743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TapeSpeed: {x: -2, y: 0, z: 0}
+  TapeSpeed: {x: -4, y: 0, z: 0}
   Tape: {fileID: 1156610751}
   uiComponents:
     hud:
