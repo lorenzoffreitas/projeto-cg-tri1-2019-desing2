@@ -5,7 +5,6 @@ using System;
 using UnityEngine.UI;
 
 [Serializable]
-
 public class UIComponents 
 {
     [Serializable]
