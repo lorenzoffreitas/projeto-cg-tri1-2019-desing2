@@ -4534,6 +4534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSFX:
     coinPickup: {fileID: 8300000, guid: cde8b6f0ed8c8144d8e4b0027a49b1b9, type: 3}
+    Fail: {fileID: 8300000, guid: 6c04c28756827424a81cca20327c5717, type: 3}
 --- !u!1001 &688233996
 PrefabInstance:
   m_ObjectHideFlags: 0
