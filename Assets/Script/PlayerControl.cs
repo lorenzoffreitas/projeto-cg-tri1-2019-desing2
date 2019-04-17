@@ -12,19 +12,46 @@ public class PlayerControl : MonoBehaviour
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")){
-                Camera.main.GetComponentInChildren<AudioSource>().mute = true;
-                LevelManager.instance.SetTapeSpeed(0);
-                AudioManager.instance.PlaySoundFail(gameObject);
-                
-                SFXManager.instance.ShowDieParticles(gameObject);
+        if (other.gameObject.CompareTag("gift")) {
+                stopmusicandtape();
+                AudioManager.instance.PlaySoundLevelComplete(gameObject);
                 Destroy(gameObject);
-
+                
+    
+}
+        
+        
+        
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")){
+        KillPlayer();
+        }
+   
+     else if (other.gameObject.layer == LayerMask.NameToLayer("Forbidden")){
+        KillPlayer();
         }
    
    
-   
-   
     }
+void stopmusicandtape(){
 
+
+
+Destroy(gameObject);
+Camera.main.GetComponentInChildren<AudioSource>().mute = true;
+LevelManager.instance.SetTapeSpeed(0);
+
+
+}
+
+
+
+void KillPlayer() {
+
+
+Camera.main.GetComponentInChildren<AudioSource>().mute = true;
+LevelManager.instance.SetTapeSpeed(0);
+AudioManager.instance.PlaySoundFail(gameObject);
+SFXManager.instance.ShowDieParticles(gameObject);
+Destroy(gameObject);
+}
 }

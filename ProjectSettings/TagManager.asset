@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - Ghost
   - arcane
+  - gift
+  - forbidden
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Collectibles
   - Platforms
   - Camera
-  - 
+  - Forbidden
   - 
   - 
   - 
