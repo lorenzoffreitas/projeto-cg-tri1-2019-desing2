@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
                 stopmusicandtape();
                 AudioManager.instance.PlaySoundLevelComplete(gameObject);
                 Destroy(gameObject);
-                
+            LevelManager.instance.ShowLevelCompletePanel();
     
 }
         
