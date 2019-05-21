@@ -53,5 +53,6 @@ LevelManager.instance.SetTapeSpeed(0);
 AudioManager.instance.PlaySoundFail(gameObject);
 SFXManager.instance.ShowDieParticles(gameObject);
 Destroy(gameObject);
+LevelManager.instance.ShowGameOverPanel();
 }
 }
