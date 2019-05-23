@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.CompareTag("gift")) {
                 stopmusicandtape();
                 AudioManager.instance.PlaySoundLevelComplete(gameObject);
-                Destroy(gameObject);
+                DestroyPlayer();
             LevelManager.instance.ShowLevelCompletePanel();
     
 }
@@ -59,12 +59,17 @@ Camera.main.GetComponentInChildren<AudioSource>().mute = true;
 LevelManager.instance.SetTapeSpeed(0);
 AudioManager.instance.PlaySoundFail(gameObject);
 SFXManager.instance.ShowDieParticles(gameObject);
-Destroy(gameObject);
+DestroyPlayer();
 LevelManager.instance.ShowGameOverPanel();
 }
 
 void Impulse(float force){
     rb.velocity = Vector3.zero;
     rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+}
+
+void DestroyPlayer(){
+    Camera.main.GetComponent<CameraFollow>().TurnOff();
+    Destroy(gameObject);
 }
 }
