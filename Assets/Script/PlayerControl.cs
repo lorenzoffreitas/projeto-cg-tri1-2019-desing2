@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    Rigidbody2D rb;
+
+    void Start(){
+        rb = GetComponent<Rigidbody2D>();
+    }
     
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Coin")){
@@ -11,6 +16,8 @@ public class PlayerControl : MonoBehaviour
             AudioManager.instance.PlaySoundCoinPickup(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
+            Impulse(10); 
+
         }
         if (other.gameObject.CompareTag("gift")) {
                 stopmusicandtape();
@@ -54,5 +61,10 @@ AudioManager.instance.PlaySoundFail(gameObject);
 SFXManager.instance.ShowDieParticles(gameObject);
 Destroy(gameObject);
 LevelManager.instance.ShowGameOverPanel();
+}
+
+void Impulse(float force){
+    rb.velocity = Vector3.zero;
+    rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
 }
 }
